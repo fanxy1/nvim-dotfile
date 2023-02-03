@@ -1,0 +1,11 @@
+{
+  "languageserver": {
+    "ruby": {
+      "filetypes": ["rb", "rake", "ru"]
+    },
+    "elixir": {
+      "filetypes": ["ex", "eex", "exs"]
+    }
+  },
+  "elixir.pathToElixirLS": "~/.config/nvim/elixir-ls/release/language_server.sh"
+}
