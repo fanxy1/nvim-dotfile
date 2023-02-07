@@ -1,48 +1,19 @@
-local present, cmp = pcall(require, "cmp")
+-- luasnip setup
+local luasnip = require 'luasnip'
 
-if not present then
-   return
-end
-
-vim.opt.completeopt = "menuone,noselect"
-
-local function border(hl_name)
-   return {
-      { "╭", hl_name },
-      { "─", hl_name },
-      { "╮", hl_name },
-      { "│", hl_name },
-      { "╯", hl_name },
-      { "─", hl_name },
-      { "╰", hl_name },
-      { "│", hl_name },
-   }
-end
-
-local cmp_window = require "cmp.utils.window"
-
-function cmp_window:has_scrollbar()
-   return false
-end
-
-local options = {
-   window = {
-      completion = {
-         border = border "CmpBorder",
-      },
-      documentation = {
-         border = border "CmpDocBorder",
-      },
-   },
-   snippet = {
-      expand = function(args)
-         require("luasnip").lsp_expand(args.body)
-      end,
-   },
-   formatting = {
+-- nvim-cmp setup
+local cmp = require 'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+      luasnip.filetype_extend("ruby", { "rails" })
+    end,
+  },
+  formatting = {
       format = function(entry, vim_item)
-         local icons = require "plugin-config.lspkind_icons"
-         vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+         -- local icons = require "plugins.configs.lspkind_icons"
+         -- vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
          vim_item.menu = ({
            nvim_lsp = '[LSP]',
            nvim_lua = '[Lua]',
@@ -88,13 +59,11 @@ local options = {
          "s",
       }),
    },
-   sources = {
-      { name = "nvim_lsp" },
-      { name = "luasnip" },
-      { name = "buffer" },
-      { name = "nvim_lua" },
-      { name = "path" }
-   },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" }
+  },
 }
-
-cmp.setup(options)
