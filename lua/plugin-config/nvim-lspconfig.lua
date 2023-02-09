@@ -36,13 +36,16 @@ capabilities.textDocument.completion.completionItem = {
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
-local servers = { "lemminx", "clangd", "rust_analyzer", "elixirls", "texlab", "hls", 'solargraph', 'ruby_ls' }
+local servers = 
+  { 
+    "lemminx", "clangd", "rust_analyzer", "elixirls", 
+    "texlab", "hls", 'solargraph', 'ruby_ls', 'luau_lsp', 'sumneko_lua'
+  }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    -- cmd = { "/Users/fxy/.config/nvim/elixir-ls/release/language_server.sh" }
   }
 end
 
