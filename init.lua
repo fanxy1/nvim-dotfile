@@ -15,4 +15,3 @@ require("plugin-config.bufferline")
 
 require("plugin-config.nvim-lspconfig")
 require("plugin-config.cmp")
-

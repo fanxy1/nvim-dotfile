@@ -151,6 +151,11 @@ _G.packer_plugins = {
     path = "/Users/fxy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-snippy"] = {
+    loaded = true,
+    path = "/Users/fxy/.local/share/nvim/site/pack/packer/start/nvim-snippy",
+    url = "https://github.com/dcampos/nvim-snippy"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/fxy/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

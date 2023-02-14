@@ -29,7 +29,10 @@ return require("packer").startup(function(use)
   }
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use "hrsh7th/cmp-nvim-lsp"
+
+  use 'dcampos/nvim-snippy'
   use "L3MON4D3/LuaSnip" -- snippets needes
+
   use "saadparwaiz1/cmp_luasnip"
   use "rafamadriz/friendly-snippets"
   use "hrsh7th/cmp-path" 

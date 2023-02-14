@@ -39,7 +39,7 @@ local lspconfig = require('lspconfig')
 local servers = 
   { 
     "lemminx", "clangd", "rust_analyzer", "elixirls", 
-    "texlab", "hls", 'solargraph', 'ruby_ls', 'luau_lsp', 'sumneko_lua'
+    "texlab", "hls", 'solargraph', 'ruby_ls', 'luau_lsp', 'lua_ls'
   }
 
 for _, lsp in ipairs(servers) do
